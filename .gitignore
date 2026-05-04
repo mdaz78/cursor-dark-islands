@@ -1,4 +1,4 @@
 .DS_Store
 *.vsix
 node_modules/
-result/
+.cursor_dark_islands_first_run

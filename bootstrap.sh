@@ -2,15 +2,15 @@
 
 set -e
 
-# Islands Dark Theme Bootstrap Installer
-# One-liner: curl -fsSL https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.sh | bash
+# Cursor Dark Islands Bootstrap Installer
+# One-liner: curl -fsSL https://raw.githubusercontent.com/mdaz78/cursor-dark-islands/main/bootstrap.sh | bash
 
-echo "🏝️  Islands Dark Theme Bootstrap Installer"
-echo "=========================================="
+echo "🏝️  Cursor Dark Islands Bootstrap Installer"
+echo "============================================"
 echo ""
 
-REPO_URL="https://github.com/bwya77/vscode-dark-islands.git"
-INSTALL_DIR="$HOME/.islands-dark-temp"
+REPO_URL="https://github.com/mdaz78/cursor-dark-islands.git"
+INSTALL_DIR="$HOME/.cursor-dark-islands-temp"
 
 # Detect OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -21,7 +21,7 @@ else
     OS="Linux"
 fi
 
-echo "📥 Step 1: Downloading Islands Dark..."
+echo "📥 Step 1: Downloading Cursor Dark Islands..."
 echo "   Repository: $REPO_URL"
 
 # Remove old temp directory if exists
@@ -31,7 +31,7 @@ rm -rf "$INSTALL_DIR"
 # Clone repository
 BRANCH="main"
 if ! git clone "$REPO_URL" "$INSTALL_DIR" --quiet --branch "$BRANCH"; then
-    echo "❌ Failed to download Islands Dark"
+    echo "❌ Failed to download Cursor Dark Islands"
     exit 1
 fi
 
@@ -64,4 +64,4 @@ else
 fi
 
 echo ""
-echo -e "🎉 Done! Enjoy your Islands Dark theme!"
+echo -e "🎉 Done! Enjoy your Cursor Dark Islands theme!"
