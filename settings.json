@@ -1,5 +1,5 @@
 {
-  "// Islands Dark Settings v0.0.2": "",
+  "// Cursor Dark Islands Settings v0.1.0": "",
   "workbench.colorTheme": "Islands Dark",
   "editor.fontFamily": "IBM Plex Mono",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
@@ -458,10 +458,28 @@
       "border-left": "1px solid rgba(255,255,255,0.06) !important",
       "border-bottom": "1px solid rgba(255,255,255,0.02) !important",
       "border-right": "1px solid rgba(255,255,255,0.02) !important",
-      "box-shadow": "0 2px 8px 0 rgba(0,0,0,0.3) !important"
+      "box-shadow": "0 2px 8px 0 rgba(0,0,0,0.3) !important",
+      "clip-path": "inset(0 round var(--islands-panel-radius)) !important",
+      "isolation": "isolate !important"
+   },
+   ".part.auxiliarybar > *, .part.auxiliarybar > .composite, .part.auxiliarybar > .composite > *": {
+      "border-radius": "inherit !important"
    },
    ".part.auxiliarybar .composite.title": {
-      "padding": "8px 0 0 8px !important"
+      "padding": "8px 0 0 8px !important",
+      "background": "transparent !important",
+      "background-image": "none !important",
+      "border-top-right-radius": "var(--islands-panel-radius) !important",
+      "overflow": "hidden !important"
+   },
+   ".part.auxiliarybar .tabs-container": {
+      "background": "transparent !important",
+      "background-image": "none !important",
+      "border-bottom": "none !important"
+   },
+   ".part.auxiliarybar .tab.active, .part.auxiliarybar .tab:not(.active)": {
+      "box-shadow": "none !important",
+      "border-right": "none !important"
    },
    ".part.auxiliarybar .content": {
       "width": "100% !important"

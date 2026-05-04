@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0 - [2026-05-04]
+
+### CHANGED
+- Converted from VS Code theme to Cursor-native theme. VS Code, Antigravity, and
+  Nix flake support removed. Extension renamed to `bwya77.cursor-dark-islands`.
+- Display name renamed to "Cursor Dark Islands"; theme picker label remains "Islands Dark".
+
+### ADDED
+- Cursor CLI auto-detection in install scripts (multiple fallback locations per OS)
+- Quit-if-running preflight so Custom UI Style's CSS patch persists across the install
+- Settings merge mode (preserves user's existing keys), replacing the previous
+  REPLACE-with-backup behavior on the bash installer
+- VSIX-fallback install path for Custom UI Style if Cursor's marketplace install fails
+
 ## 0.0.2 - [2026-02-19]
 
 ### FIXED

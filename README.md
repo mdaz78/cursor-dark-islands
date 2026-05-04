@@ -1,4 +1,4 @@
-# Islands Dark
+# Cursor Dark Islands
 
 <a href="https://www.buymeacoffee.com/bwya77" style="margin-right: 10px;">
     <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
@@ -8,14 +8,14 @@
 </a>
 
 
-A dark color theme for Visual Studio Code inspired by the easemate IDE. Features floating glass-like panels, rounded corners, smooth animations, and a deeply refined UI.
+A dark color theme for [Cursor](https://www.cursor.com) inspired by the easemate IDE. Features floating glass-like panels, rounded corners, smooth animations, and a deeply refined UI.
 
 - [easemate](https://x.com/easemate)
 - [easemate Nav](https://x.com/Jakubantalik/status/1952672176450215944)
 - [easemate effects](https://x.com/aaroniker/status/1989727838992539655)
 
 
-![Islands Dark Screenshot](assets/CleanShot%202026-02-19%20at%2019.37.59@2x.png)
+![Cursor Dark Islands Screenshot](assets/CleanShot%202026-02-19%20at%2019.37.59@2x.png)
 
 ## Features
 
@@ -31,7 +31,7 @@ A dark color theme for Visual Studio Code inspired by the easemate IDE. Features
 - Warm syntax highlighting with comprehensive language support (JS/TS, Python, Go, Rust, HTML/CSS, JSON, YAML, Markdown)
 - IBM Plex Mono in the editor, FiraCode Nerd Font Mono in the terminal
 
-![Islands Dark Screenshot UI](assets/CleanShot%202026-02-14%20at%2021.45.00@2x.png)
+![Cursor Dark Islands Screenshot UI](assets/CleanShot%202026-02-14%20at%2021.45.00@2x.png)
 
 ## Installation
 
@@ -44,13 +44,13 @@ The fastest way to install:
 #### macOS/Linux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mdaz78/cursor-dark-islands/main/bootstrap.sh | bash
 ```
 
 #### Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.ps1 | iex
+irm https://raw.githubusercontent.com/mdaz78/cursor-dark-islands/main/bootstrap.ps1 | iex
 ```
 
 ### Manual Clone Install
@@ -60,57 +60,29 @@ If you prefer to clone first:
 #### macOS/Linux
 
 ```bash
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
-cd islands-dark
+git clone https://github.com/mdaz78/cursor-dark-islands.git
+cd cursor-dark-islands
 ./install.sh
 ```
 
 #### Windows
 
 ```powershell
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
-cd islands-dark
+git clone https://github.com/mdaz78/cursor-dark-islands.git
+cd cursor-dark-islands
 .\install.ps1
 ```
 
 The scripts will automatically:
-- ✅ Install the Islands Dark theme extension
-- ✅ Install the Custom UI Style extension
+- ✅ Install the Cursor Dark Islands theme extension
+- ✅ Install the Custom UI Style extension (with VSIX-download fallback)
 - ✅ Install Bear Sans UI fonts
-- ✅ Back up your existing settings and apply Islands Dark settings
-- ✅ Enable Custom UI Style and reload VS Code
+- ✅ Back up your existing settings and **merge** Cursor Dark Islands settings into them
+- ✅ Reload Cursor
 
-> **Note:** IBM Plex Mono and FiraCode Nerd Font Mono must be installed separately (the script will remind you).
-
-### Nix Flake Install
-
-If you use Nix, you can run a pre-configured instance of VS Code (or VSCodium) with the theme, extensions, and fonts already bundled.
-
-To run it directly without installing:
-
-```bash
-# Run VS Code
-nix run github:bwya77/vscode-dark-islands#vscode
-
-# Or run VSCodium
-nix run github:bwya77/vscode-dark-islands#vscodium
-```
-
-To use it in your NixOS or Home Manager configuration, add it to your flake inputs:
-
-```nix
-{
-  inputs.islands-dark.url = "github:bwya77/vscode-dark-islands";
-
-  outputs = { self, nixpkgs, islands-dark, ... }: {
-    # Then you can add and use it:
-    # islands-dark.packages.${pkgs.stdenv.hostPlatform.system}.vscode
-    # islands-dark.packages.${pkgs.stdenv.hostPlatform.system}.vscodium
-  };
-}
-```
-
-> **Note:** The Nix flake automatically includes the **Custom UI Style** extension, **Seti Folder** icon theme, and all required fonts (**Bear Sans UI**, **IBM Plex Mono**, and **FiraCode Nerd Font**). It will also copy the recommended `settings.json` on the first run.
+> **Note:** IBM Plex Mono and FiraCode Nerd Font Mono must be installed separately.
+>
+> **Note:** Quit Cursor before running the installer. Custom UI Style patches Cursor's core CSS at install time, and a running instance will revert the patch on quit.
 
 ### Manual Installation
 
@@ -121,18 +93,18 @@ If you prefer to install manually, follow these steps:
 Clone this repo and copy the extension files:
 
 ```bash
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
-cd islands-dark
-mkdir -p ~/.vscode/extensions/bwya77.islands-dark-1.0.0
-cp package.json ~/.vscode/extensions/bwya77.islands-dark-1.0.0/
-cp -r themes ~/.vscode/extensions/bwya77.islands-dark-1.0.0/
+git clone https://github.com/mdaz78/cursor-dark-islands.git
+cd cursor-dark-islands
+mkdir -p ~/.cursor/extensions/bwya77.cursor-dark-islands-1.0.0
+cp package.json ~/.cursor/extensions/bwya77.cursor-dark-islands-1.0.0/
+cp -r themes ~/.cursor/extensions/bwya77.cursor-dark-islands-1.0.0/
 ```
 
 On Windows (PowerShell):
 ```powershell
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
-cd islands-dark
-$ext = "$env:USERPROFILE\.vscode\extensions\bwya77.islands-dark-1.0.0"
+git clone https://github.com/mdaz78/cursor-dark-islands.git
+cd cursor-dark-islands
+$ext = "$env:USERPROFILE\.cursor\extensions\bwya77.cursor-dark-islands-1.0.0"
 New-Item -ItemType Directory -Path $ext -Force
 Copy-Item package.json $ext\
 Copy-Item themes $ext\themes -Recurse
@@ -140,24 +112,20 @@ Copy-Item themes $ext\themes -Recurse
 
 #### Step 2: Install the Custom UI Style extension
 
-The floating panels, rounded corners, glass borders, and animations are powered by the **Custom UI Style** extension.
-
-1. Open **Extensions** in VS Code: (`Cmd+Shift+X` / `Ctrl+Shift+X`)
-2. Search for **Custom UI Style** (by `subframe7536`)
-3. Click **Install**
+The floating panels, rounded corners, glass borders, and animations are powered by the **Custom UI Style** extension by `subframe7536`. See [Custom UI Style on Cursor](#custom-ui-style-on-cursor) below — Cursor's marketplace differs from VS Code's, so the install may need a manual VSIX step.
 
 #### Step 3: Install recommended icon theme
 
 For the best experience with the color-matched icon glow effect, install the **Seti Folder** icon theme:
 
-1. Open **Extensions** in VS Code (`Cmd+Shift+X` / `Ctrl+Shift+X`)
+1. Open **Extensions** in Cursor (`Cmd+Shift+X` / `Ctrl+Shift+X`)
 2. Search for **[Seti Folder](https://marketplace.visualstudio.com/items?itemName=l-igh-t.vscode-theme-seti-folder)** (by `l-igh-t`)
 3. Click **Install**
 4. Set it as your icon theme: **Command Palette** > **Preferences: File Icon Theme** > **Seti Folder**
 
-#### Step 5: Install fonts
+#### Step 4: Install fonts
 
-This theme uses two fonts:
+This theme uses three fonts:
 
 - **IBM Plex Mono** — used in the editor
 - **FiraCode Nerd Font Mono** — used in the terminal
@@ -169,23 +137,37 @@ To install Bear Sans UI:
 
 If you prefer different fonts, update the `editor.fontFamily`, `terminal.integrated.fontFamily`, and `font-family` values in the settings.
 
-#### Step 6: Apply the settings
+#### Step 5: Apply the settings
 
-Copy the contents of `settings.json` from this repo into your VS Code: settings:
+Copy the contents of `settings.json` from this repo into your Cursor settings:
 
-1. Open **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`)
+1. Open the **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`)
 2. Search for **Preferences: Open User Settings (JSON)**
 3. Merge the contents of this repo's `settings.json` into your settings file
 
 > **Note:** If you already have existing settings, merge carefully. The key settings are `workbench.colorTheme`, `custom-ui-style.stylesheet`, and the font/indent preferences.
 
-#### Step 7: Enable Custom UI Style
+#### Step 6: Enable Custom UI Style
 
-1. Open **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`)
+1. Open the **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`)
 2. Run **Custom UI Style: Enable**
-3. VS Code will reload
+3. Cursor will reload
 
-> **Note:** You may see a "corrupt installation" warning after enabling. This is expected since Custom UI Style injects CSS into VS Code. Click the gear icon on the warning and select **Don't Show Again**.
+> **Note:** You may see a "corrupt installation" warning after enabling. This is expected since Custom UI Style injects CSS into Cursor. Click the gear icon on the warning and select **Don't Show Again**.
+
+## Custom UI Style on Cursor
+
+Cursor is a fork of VS Code, so it accepts standard VS Code theme files and Custom UI Style works inside it. However, **Cursor's default extension marketplace is Open VSX, not the VS Code marketplace** where Custom UI Style is published. The installer handles this with a three-tier fallback:
+
+1. Try installing via Cursor's CLI (`cursor --install-extension subframe7536.custom-ui-style`).
+2. If that fails, download the VSIX directly from the VS Code marketplace and side-load it via `cursor --install-extension <vsix-path>`.
+3. If that also fails, the installer prints manual instructions and continues — colors will work but the floating glass effect will not.
+
+If you need to install manually:
+
+1. Open **Extensions** in Cursor (`Cmd+Shift+X` / `Ctrl+Shift+X`)
+2. Click the `...` menu in the Extensions panel → **Install from VSIX...**
+3. Download the VSIX from [https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style](https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style) (click **Download Extension** in the right column) and select it
 
 ## What the CSS customizations do
 
@@ -231,7 +213,7 @@ All key visual properties are controlled by CSS custom properties defined at the
 | `--islands-bg-canvas` | `#121216` | Deep background behind all panels (workbench, title bar, status bar, activity bar) |
 | `--islands-bg-surface` | `#181a1d` | Panel/surface background (chat input, editor widgets) |
 
-These two colors define the theme's depth. The canvas is the darker base layer visible between panels, while the surface is the slightly lighter color used for interactive elements. To override the theme's panel colors (sidebar, editor, terminal backgrounds), use VS Code's `workbench.colorCustomizations` in your settings.
+These two colors define the theme's depth. The canvas is the darker base layer visible between panels, while the surface is the slightly lighter color used for interactive elements. To override the theme's panel colors (sidebar, editor, terminal backgrounds), use Cursor's `workbench.colorCustomizations` in your settings.
 
 ### Border Radius
 
@@ -253,58 +235,71 @@ For example, to make everything sharper, set all values to `8px`. For a fully ro
 
 Increase to `12px` or `16px` for a more spaced-out layout, or reduce to `4px` for a tighter look.
 
+## Known Limitations
+
+This release styles Cursor's VS Code-inherited surfaces (sidebar, editor, terminal, command palette, notifications, status bar). Cursor adds AI-specific surfaces that are **not yet styled**:
+
+- **Chat sidebar** (`Cmd+L`) — renders with default Cursor styling
+- **Composer / Agent pane** — renders with default Cursor styling
+- **Inline edit overlay** (`Cmd+K`) — renders as a standard widget without glass borders
+- **Tab autocomplete ghost text** — uses Cursor's default rendering
+
+The color theme cascades into these surfaces, so they don't look out of place — they just don't get the floating-glass treatment. Contributions to extend the CSS to these areas are welcome.
+
 ## Troubleshooting
 
 ### Changes aren't taking effect
 Try disabling and re-enabling Custom UI Style:
 1. **Command Palette** > **Custom UI Style: Disable**
-2. Reload VS Code
+2. Reload Cursor
 3. **Command Palette** > **Custom UI Style: Enable**
-4. Reload VS Code
+4. Reload Cursor
+
+### Glass panels missing but colors work
+Custom UI Style failed to install or activate. Re-run the installer with Cursor closed, or follow the manual VSIX install steps under [Custom UI Style on Cursor](#custom-ui-style-on-cursor).
 
 ### "Corrupt installation" warning
 This is expected after enabling Custom UI Style. Dismiss it or select **Don't Show Again**.
 
 ### Previously used "Custom CSS and JS Loader" extension
-If you previously used the **Custom CSS and JS Loader** extension (`be5invis.vscode-custom-css`), it may have injected CSS directly into VS Code's `workbench.html` that persists even after disabling. If styles conflict, reinstall VS Code to get a clean `workbench.html`, then use only **Custom UI Style**.
+If you previously used the **Custom CSS and JS Loader** extension (`be5invis.vscode-custom-css`), it may have injected CSS directly into Cursor's `workbench.html` that persists even after disabling. If styles conflict, reinstall Cursor to get a clean `workbench.html`, then use only **Custom UI Style**.
 
 ## Uninstalling
 
-Run the uninstall script to restore your VS Code to its previous state:
+Run the uninstall script to restore your Cursor to its previous state:
 
 **macOS/Linux:**
 ```bash
 # If you still have the repo cloned:
-cd islands-dark
+cd cursor-dark-islands
 ./uninstall.sh
 
 # Or download and run directly:
-curl -fsSL https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mdaz78/cursor-dark-islands/main/uninstall.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
 # If you still have the repo cloned:
-cd islands-dark
+cd cursor-dark-islands
 .\uninstall.ps1
 
 # Or download and run directly:
-irm https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/uninstall.ps1 | iex
+irm https://raw.githubusercontent.com/mdaz78/cursor-dark-islands/main/uninstall.ps1 | iex
 ```
 
 The uninstall script will:
-- Restore your previous settings from the `settings.json.pre-islands-dark` backup
-- Remove the Islands Dark theme extension
-- Unregister the extension from VS Code
+- Restore your previous settings from the `settings.json.pre-cursor-dark-islands` backup
+- Remove the Cursor Dark Islands theme extension
 
 After running the script, you'll need to:
-1. Open **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run **Custom UI Style: Disable**
-2. Open **Command Palette** and search **Preferences: Color Theme** to select a new theme
-3. Reload VS Code
+1. Open the **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run **Custom UI Style: Disable**
+2. Open the **Command Palette** and search **Preferences: Color Theme** to select a new theme
+3. Reload Cursor
 
 ## Credits
 
-Inspired by the [JetBrains Islands Dark](https://www.jetbrains.com/) UI theme.
+Forked from [bwya77/vscode-dark-islands](https://github.com/bwya77/vscode-dark-islands) and adapted for Cursor. Original theme inspired by the [JetBrains Islands Dark](https://www.jetbrains.com/) UI theme.
 
 ## License
 
