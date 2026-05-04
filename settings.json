@@ -458,7 +458,12 @@
       "border-left": "1px solid rgba(255,255,255,0.06) !important",
       "border-bottom": "1px solid rgba(255,255,255,0.02) !important",
       "border-right": "1px solid rgba(255,255,255,0.02) !important",
-      "box-shadow": "0 2px 8px 0 rgba(0,0,0,0.3) !important"
+      "box-shadow": "0 2px 8px 0 rgba(0,0,0,0.3) !important",
+      "clip-path": "inset(0 round var(--islands-panel-radius)) !important",
+      "isolation": "isolate !important"
+   },
+   ".part.auxiliarybar > *, .part.auxiliarybar > .composite, .part.auxiliarybar > .composite > *": {
+      "border-radius": "inherit !important"
    },
    ".part.auxiliarybar .composite.title": {
       "padding": "8px 0 0 8px !important",
